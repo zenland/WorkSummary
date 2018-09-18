@@ -27,7 +27,7 @@
 
 这部分工作大致可以分为三块：系统研究，告警功能改进，使用说明
 
-项目地址：https://github.com/zenland/graylog以下地址相对于该项目地址。
+项目地址：`https://github.com/zenland/graylog` 这一节以下地址相对于该项目地址
 
 - 系统研究
     这部分在项目README的系统说明中记录，包括访问控制、数据rotation与retention机制、dashboard、extractor、pipeline与alert部分系统说明。
