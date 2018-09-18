@@ -49,7 +49,7 @@
 
 2.对象存储流程：
 
-
+![](./object.PNG)
 
   一个文件被分割成多个对象，每个对象有一个oid，这个oid经过运算找到placement group id，接着pgid再经过CRUSH算法计算出该对象存储在osd的位置。
 
@@ -67,7 +67,7 @@
 
 4.Cephfs 架构：
 
-
+![](./cephfs.png)
 
   相对于rbd架构多了MDS结点来存储文件系统的元数据。
 
