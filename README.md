@@ -91,11 +91,11 @@
 
     + 问题1： 无法在主机上面安装ceph
 
-      解决方案：手动下载所需要rpm包，下载地址`http://mirrors.ustc.edu.cn/ceph/rpm-jewel/el7/x86_64/`,另外在`106.75.229.247`的主机上面更`/home/jane/rpm`地址有下载好的所有包。
+      解决方案：手动下载所需要rpm包，下载地址`http://mirrors.ustc.edu.cn/ceph/rpm-jewel/el7/x86_64/`,另外在`./rpm/`地址有下载好的所有包。
 
     + 问题2：无法找到文件
 
-      解决方案：是网络问题，需要在`ceph.conf`文件中正确配置publice_network这一项。
+      解决方案：是网络问题，需要在`ceph.conf`文件中正确配置publice_network这一项。参考配置在`./conf/ceph.conf`文件中。
 
   + object存储实践
 
@@ -103,11 +103,11 @@
 
     实践包括：
 
-    + 查询集群状态: `./code/client.py`
+    + 查询集群状态: 代码在`./code/client.py`
 
-    + 创建查询pool: `./code/pool.py`
+    + 创建查询pool: 代码在`./code/pool.py`
 
-    + 对对象进行增删改查操作：`./code/io.py`
+    + 对对象进行增删改查操作：代码在`./code/io.py`
 
       
 
@@ -117,7 +117,7 @@
 
     实践包括：
 
-    + 创建以及读写块：`./code/myrbd.py`
+    + 创建以及读写块：代码在`./code/myrbd.py`
 
     在实践中发现如果将rbd映射地点的文件进行更改，再去使用rbd命令获取各个pool中的文件可以看到更改之前文件的信息，原因在于对文件进行更改时，文件系统只是将该部分区域标记为了可用，而其中的信息并没有真正消失，所以从集群中去获取一个块的每个小单元时候仍可以获取到该更改前的信息。
 
