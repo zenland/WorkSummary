@@ -55,7 +55,7 @@
 
   + object存储
 
-    ![](C:/Program%20Files/Typora/object.PNG)
+    ![](./img/object.PNG)
 
      一个文件被分割成多个对象，每个对象有一个oid，这个oid经过运算找到placement group id，接着pgid再经过CRUSH算法计算出该对象存储在osd的位置。
 
@@ -73,7 +73,7 @@
 
   + cephfs存储
 
-    ![](C:/Program%20Files/Typora/cephfs.png)
+    ![](./img/cephfs.png)
 
     相对于rbd架构多了MDS结点来存储文件系统的元数据。另外mds在启动的时候可以选择冷备份和热备份，这部分问了杨振，好像目前只支持冷备份。
 
@@ -103,11 +103,11 @@
 
     实践包括：
 
-    + 查询集群状态: `client.py`
+    + 查询集群状态: `./code/client.py`
 
-    + 创建查询pool: `pool.py`
+    + 创建查询pool: `./code/pool.py`
 
-    + 对对象进行增删改查操作：`io.py`
+    + 对对象进行增删改查操作：`./code/io.py`
 
       
 
@@ -117,7 +117,7 @@
 
     实践包括：
 
-    + 创建以及读写块：`myrbd.py`
+    + 创建以及读写块：`./code/myrbd.py`
 
     在实践中发现如果将rbd映射地点的文件进行更改，再去使用rbd命令获取各个pool中的文件可以看到更改之前文件的信息，原因在于对文件进行更改时，文件系统只是将该部分区域标记为了可用，而其中的信息并没有真正消失，所以从集群中去获取一个块的每个小单元时候仍可以获取到该更改前的信息。
 
