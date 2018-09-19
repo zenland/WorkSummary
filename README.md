@@ -1,6 +1,6 @@
-实习工作总结
+# 实习工作总结
 
-（一）EFK告警功能
+## （一）EFK告警功能
 
    这部分工作分为两块，本地部署与容器封装
 
@@ -14,7 +14,7 @@
     基于上一部分工作将告警功能实现封装为docker容器，其中项目地址: `https://github.com/zenland/longging_alert_docker`
     这部分需要注意的主要是报警规则配置文件：config.yaml，rules/；自定义报警方法实现python文件*_alert.py，需要将其映射到容器内部。
 
-（二）Bugzilla部署
+## （二）Bugzilla部署
 
    这部分工作同样分为两部分，普通版的bugzilla和改进版的bugzilla部署
 
@@ -27,7 +27,7 @@
   项目地址: `https://github.com/zenland/bugzilla_harmony`
   这部分需要注意的主要是端口映射和容器内的重定向地址，更改规则在启动说明一栏中定义。
 
-（三）Graylog系统研究与改进
+## （三）Graylog系统研究与改进
 
    这部分工作大致可以分为三块：系统研究，告警功能改进，使用说明
 
@@ -48,7 +48,7 @@
     需要注意的地方是，为了兼容fluent-bit的输出与graylog的输入，所以增加了fluentd来协调两者格式，即fluent-bit输出到fluentd，fluentd再发送给graylog。这部分配置在文档的收集数据，转发数据部分。
     另外在解析数据时候，收集到的数据为json格式，需要先使用extractor解析，接着在处理Level，和time字段时候使用了pipeline，具体pipeline匹配规则在文档的解析数据部分介绍。
 
-（四）Ceph学习
+## （四）Ceph学习
 
    这部分工作主要包括学习和实践部分，很多都是自己理解，所以不一定正确。
 
