@@ -5,10 +5,12 @@
    这部分工作分为两块，本地部署与容器封装
 
 - 本地部署：
+
     主要通过网上插件源码实现，其中项目地址  :  ` https://github.com/zenland/logging-alert_local`
     上述文件中包括了环境、配置、自定义报警实现说明。
     由于只是在本地测试，README中的自定义报警格式一章以CPU信息收集为例，介绍了自定义消息格式。另外需要注意的是该插件的报警类型配置，该部分主要在配置文件说明一章中介绍。
 - docker封装：
+
     基于上一部分工作将告警功能实现封装为docker容器，其中项目地址: `https://github.com/zenland/longging_alert_docker`
     这部分需要注意的主要是报警规则配置文件：config.yaml，rules/；自定义报警方法实现python文件*_alert.py，需要将其映射到容器内部。
 
@@ -16,10 +18,12 @@
 
    这部分工作同样分为两部分，普通版的bugzilla和改进版的bugzilla部署
 
-- 普通版部署
+- 普通版部署:
+
   项目地址: `https://github.com/zenland/bugzilla_docker`
   由于源码本身的bug，导致容器内某个数据库、bug用户以及某个文件夹不存在，需要手动创建，创建方法在注意事项一栏。
-- 改进版部署
+- 改进版部署:
+
   项目地址: `https://github.com/zenland/bugzilla_harmony`
   这部分需要注意的主要是端口映射和容器内的重定向地址，更改规则在启动说明一栏中定义。
 
@@ -29,14 +33,17 @@
 
    项目地址：`https://github.com/zenland/graylog` 这一节以下地址相对于该项目地址
 
-- 系统研究
+- 系统研究:
+
     这部分在项目README的系统说明中记录，包括访问控制、数据rotation与retention机制、dashboard、extractor、pipeline与alert部分系统说明。
     其余还有decorator、lookup tables部分说明，这部分在实践中作用不大。
-- 告警功能改进
+- 告警功能改进:
+
     这部分在项目README的系统说明/alert一节中记录，其中告警功能包括两块，邮件告警和钉钉告警。
     其中邮件告警部分需要注意的是发送邮件的一些配置，包括代理服务器等，这在alert/email告警一栏由记录
-    钉钉告警是参考telegram alert，使用官网sample_plugin改写的插件（代码是自己写的，环境使用了telegram alert的环境配置）。改写后的源码地址在./my_dingding_alert/
-- 使用说明
+    钉钉告警是参考telegram alert，使用官网sample_plugin改写的插件（代码是自己写的，环境使用了telegram alert的环境配置）。改写后的源码地址在`./code/my_dingding_alert/`
+- 使用说明:
+
     这部分在文档收集数据，转发数据，接收数据，解析数据部分介绍，并附有截屏说明。
     需要注意的地方是，为了兼容fluent-bit的输出与graylog的输入，所以增加了fluentd来协调两者格式，即fluent-bit输出到fluentd，fluentd再发送给graylog。这部分配置在文档的收集数据，转发数据部分。
     另外在解析数据时候，收集到的数据为json格式，需要先使用extractor解析，接着在处理Level，和time字段时候使用了pipeline，具体pipeline匹配规则在文档的解析数据部分介绍。
