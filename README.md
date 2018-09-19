@@ -106,7 +106,7 @@
 
   + object存储实践
 
-    这部分主要参考这篇文章`http://docs.ceph.com/docs/jewel/rados/api/python/`
+    这部分主要参考这篇文章`http://docs.ceph.com/docs/jewel/rados/api/python/`,另外`http://int32bit.me/2016/05/19/Ceph-Pool%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/`介绍了对pool的操作（非python）
 
     实践包括：
 
@@ -121,6 +121,7 @@
   + rbd存储实践
 
     推荐一篇很不错的博客，对rbd的实践主要参考这篇文章：`https://cloud.tencent.com/developer/article/1006283。`
+    这篇文章介绍了rbd命令： `https://tobegit3hub1.gitbooks.io/ceph_from_scratch/content/rbd/rbd_commands.html`
 
     实践包括：
 
