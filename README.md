@@ -36,17 +36,23 @@
 - 系统研究:
 
     这部分在项目README的系统说明中记录，包括访问控制、数据rotation与retention机制、dashboard、extractor、pipeline与alert部分系统说明。
+    
     其余还有decorator、lookup tables部分说明，这部分在实践中作用不大。
 - 告警功能改进:
 
     这部分在项目README的系统说明/alert一节中记录，其中告警功能包括两块，邮件告警和钉钉告警。
+    
     其中邮件告警部分需要注意的是发送邮件的一些配置，包括代理服务器等，这在alert/email告警一栏由记录
+    
     钉钉告警是参考telegram alert，使用官网sample_plugin改写的插件（代码是自己写的，环境使用了telegram alert的环境配置）。改写后的源码地址在`./code/my_dingding_alert/`
 - 使用说明:
 
     这部分在文档收集数据，转发数据，接收数据，解析数据部分介绍，并附有截屏说明。
+    
     需要注意的地方是，为了兼容fluent-bit的输出与graylog的输入，所以增加了fluentd来协调两者格式，即fluent-bit输出到fluentd，fluentd再发送给graylog。这部分配置在文档的收集数据，转发数据部分。
+    
     另外在解析数据时候，收集到的数据为json格式，需要先使用extractor解析，接着在处理Level，和time字段时候使用了pipeline，具体pipeline匹配规则在文档的解析数据部分介绍。
+    
     在当前数据处理说明一章中有介绍当前graylog处理数据pipeline每个规则的作用，以及在以后消息都规范化以后需要修改的地方。
 
 ## （四）Ceph学习
