@@ -47,6 +47,7 @@
     这部分在文档收集数据，转发数据，接收数据，解析数据部分介绍，并附有截屏说明。
     需要注意的地方是，为了兼容fluent-bit的输出与graylog的输入，所以增加了fluentd来协调两者格式，即fluent-bit输出到fluentd，fluentd再发送给graylog。这部分配置在文档的收集数据，转发数据部分。
     另外在解析数据时候，收集到的数据为json格式，需要先使用extractor解析，接着在处理Level，和time字段时候使用了pipeline，具体pipeline匹配规则在文档的解析数据部分介绍。
+    在当前数据处理说明一章中有介绍当前graylog处理数据pipeline每个规则的作用，以及在以后消息都规范化以后需要修改的地方。
 
 ## （四）Ceph学习
 
